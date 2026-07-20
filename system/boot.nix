@@ -8,5 +8,5 @@
 	i18n.defaultLocale = "en_US.UTF-8";
 
 	# Alternative keyboard
-	console.keyMap = "br-abnt2";
+	console.keyMap = "us";
 }
