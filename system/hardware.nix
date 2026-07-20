@@ -12,10 +12,18 @@
 			enable = true;
 			enableOffloadCmd = true;
 		};
+		
+		powerManagement = {
+			enable = true;
+			finegrained = true; # allows GPU to fully poweroff when no app are running
+		};
 	};
 
-	hardware.graphics.enable32Bit = true; # due to Steam/Proton + 32bit games
-	
+	hardware.graphics = {
+		enable = true;
+		enable32Bit = true; # due to Steam/Proton + 32bit games
+	};
+
 	hardware.bluetooth = {
 		enable = true;
 		powerOnBoot = false;
