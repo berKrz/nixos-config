@@ -15,5 +15,5 @@
 	home.homeDirectory = "/home/berkrz";
 	home.stateVersion = "26.05";
 
-	nixpkgs.config.allowUnfree = true;
+	#nixpkgs.config.allowUnfree = true;
 }
