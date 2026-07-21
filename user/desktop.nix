@@ -2,7 +2,6 @@
 	wayland.windowManager.mango = {
 		enable = true;
 		autostart_sh = ''
-			noctalia
 			${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1
 		'';
 
@@ -65,5 +64,12 @@
 				"NONE,XF86MonBrightnessDown,spawn,noctalia msg brightness-down"
 			];
 		};
+	};
+
+	programs.noctalia = {
+		# Noctalia as a Systemd user service
+		systemd.enable = true;
+
+		settings = builtins.fromTOML(builtins.readFile ./noctalia/config.toml);
 	};
 }

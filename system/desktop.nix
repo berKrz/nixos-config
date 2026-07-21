@@ -32,7 +32,6 @@
 
 	# Noctalia shell
 	environment.systemPackages = [
-		inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
 		pkgs.polkit_gnome
 	];
 
