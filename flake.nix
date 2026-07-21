@@ -28,8 +28,8 @@
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
 
-		mangowc = {
-			url = "github:DreamMaoMao/mangowc";
+		mangowm = {
+			url = "github:mangowm/mango";
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
 
@@ -51,7 +51,7 @@
 				modules = [
 					disko.nixosModules.disko
 					home-manager.nixosModules.home-manager
-					inputs.mangowc.nixosModules.mango
+					inputs.mangowm.nixosModules.mango
 					inputs.noctalia-greeter.nixosModules.default
 					./hosts/${hostname}
 					./system

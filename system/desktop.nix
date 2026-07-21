@@ -28,11 +28,11 @@
 		WLR_NO_HARDWARE_CURSORS = "1";
 	};
 
-	programs.mangowc.enable = true;
+	programs.mango.enable = true;
 
 	# Noctalia shell
 	environment.systemPackages = [
-		inputs.noctalia.packages.${pkgs.system}.default
+		inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
 		pkgs.polkit_gnome
 	];
 

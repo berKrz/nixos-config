@@ -41,7 +41,7 @@
     "flake-utils": {
       "inputs": {
         "systems": [
-          "mangowc",
+          "mangowm",
           "scenefx",
           "systems"
         ]
@@ -100,7 +100,7 @@
         "type": "github"
       }
     },
-    "mangowc": {
+    "mangowm": {
       "inputs": {
         "flake-parts": "flake-parts",
         "nixpkgs": [
@@ -111,14 +111,14 @@
       "locked": {
         "lastModified": 1784526138,
         "narHash": "sha256-u92qHl33f0h9dxXd50AOGDqsG+IFdpCyJe8mWsJnBwY=",
-        "owner": "DreamMaoMao",
-        "repo": "mangowc",
+        "owner": "mangowm",
+        "repo": "mango",
         "rev": "b5efdd24e76c3c9aa2300e626fe013fcd3617cca",
         "type": "github"
       },
       "original": {
-        "owner": "DreamMaoMao",
-        "repo": "mangowc",
+        "owner": "mangowm",
+        "repo": "mango",
         "type": "github"
       }
     },
@@ -241,7 +241,7 @@
         "disko": "disko",
         "helium": "helium",
         "home-manager": "home-manager",
-        "mangowc": "mangowc",
+        "mangowm": "mangowm",
         "nixpkgs": "nixpkgs_2",
         "noctalia": "noctalia",
         "noctalia-greeter": "noctalia-greeter"
@@ -251,7 +251,7 @@
       "inputs": {
         "flake-utils": "flake-utils",
         "nixpkgs": [
-          "mangowc",
+          "mangowm",
           "nixpkgs"
         ],
         "systems": "systems_2"

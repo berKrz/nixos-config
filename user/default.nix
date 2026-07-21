@@ -1,6 +1,6 @@
 { inputs, ... }: {
 	imports = [
-		inputs.mangowc.hmModules.mango
+		inputs.mangowm.hmModules.mango
 		./shell.nix
 		./terminal.nix
 		./desktop.nix
