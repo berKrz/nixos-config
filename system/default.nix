@@ -4,8 +4,7 @@
 		./boot.nix
 		./hardware.nix
 		./networking.nix
-		./audio.nix
-		./power.nix
+		./services.nix
 		./desktop.nix
 		./users.nix
 		./fonts.nix
