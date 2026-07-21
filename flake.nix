@@ -23,7 +23,15 @@
 		# No inputs.nixpkgs.follows so binary cache doesn't break
 		noctalia.url = "github:noctalia-dev/noctalia";
 
-		mangowc.url = "github:DreamMaoMao/mangowc";
+		noctalia-greeter = {
+			url = "github:noctalia-dev/noctalia-greeter";
+			inputs.nixpkgs.follows = "nixpkgs";
+		};
+
+		mangowc = {
+			url = "github:DreamMaoMao/mangowc";
+			inputs.nixpkgs.follows = "nixpkgs";
+		};
 
 		helium.url = "github:schembriaiden/helium-browser-nix-flake";
 
@@ -43,6 +51,8 @@
 				modules = [
 					disko.nixosModules.disko
 					home-manager.nixosModules.home-manager
+					inputs.mangowc.nixosModules.mango
+					inputs.noctalia-greeter.nixosModules.default
 					./hosts/${hostname}
 					./system
 					{

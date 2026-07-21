@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, inputs, ... }: {
 	# Auth daemon
 	security.polkit.enable = true;
 
@@ -18,4 +18,23 @@
 			"org.freedesktop.impl.portal.Screenshot" = "wlr";
 		};
 	};
+	
+	# Wayland env vars
+	environment.sessionVariables = {
+		NIXOS_OZONE_WL = "1";
+		QT_QPA_PLATFORM = "wayland";
+		SDL_VIDEODRIVER = "wayland";
+		GDK_BACKEND = "wayland"; 
+		WLR_NO_HARDWARE_CURSORS = "1";
+	};
+
+	programs.mangowc.enable = true;
+
+	# Noctalia shell
+	environment.systemPackages = [
+		inputs.noctalia.packages.${pkgs.system}.default
+		pkgs.polkit_gnome
+	];
+
+	programs.noctalia-greeter.enable = true;
 }
