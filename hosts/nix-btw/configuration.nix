@@ -6,12 +6,6 @@
 		nvidiaBusId = "PCI:1:0:0";
 	};
 
- 	environment.systemPackages = with pkgs; [
-		vim
-		kitty
-		git
- 	];
-
-  	system.stateVersion = "26.05";
+ 	system.stateVersion = "26.05";
 }
 

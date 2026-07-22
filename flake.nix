@@ -61,6 +61,7 @@
 							useUserPackages = true;
 							# Makes inputs available in every HM module
 							extraSpecialArgs = { inherit inputs; };
+                                                        backupFileExtension = "backup";
 							users.${username} = import ./user;
 						};
 					}
