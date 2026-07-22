@@ -68,6 +68,7 @@
 	};
 
 	programs.noctalia = {
+		enable = true;
 		# Noctalia as a Systemd user service
 		systemd.enable = true;
 
