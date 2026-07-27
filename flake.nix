@@ -4,7 +4,7 @@
   # Noctalia v5 binary cache
   nixConfig = {
     extra-substituters = [ "https://noctalia.cachix.org" ];
-    extra-trusted-public-keys = [ "noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWp0xNFQsBRglJzxWPp3dkU4=" ];
+    extra-trusted-public-keys = [ "noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4=" ];
   };
 
   inputs = {
@@ -28,11 +28,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    mangowm = {
-      url = "github:mangowm/mango";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     helium.url = "github:schembriaiden/helium-browser-nix-flake";
 
   };
@@ -51,7 +46,6 @@
         modules = [
           disko.nixosModules.disko
           home-manager.nixosModules.home-manager
-          inputs.mangowm.nixosModules.mango
           inputs.noctalia-greeter.nixosModules.default
 	  ./hosts/${hostname}
 	  ./system

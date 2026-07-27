@@ -1,4 +1,4 @@
-{ pkgs, inputs, ... }: {
+{ pkgs, ... }: {
   # Auth daemon
   security.polkit.enable = true;
   
@@ -10,12 +10,14 @@
   # Two backends are necessary for wlroots compositors
   xdg.portal = {
     enable = true;
-    wlr.enable = true; # for screen sharing and screenshots
-    extraPortals = [ pkgs.xdg-desktop-portal-gtk ]; # file picker, app chooser etc. 
+    extraPortals = [
+      pkgs.xdg-desktop-portal-gtk # file picker, app chooser etc. 
+      pkgs.xdg-desktop-portal-hyprland # screen sharing, screen shots
+    ];
     config.common = {
       default = "gtk";
-      "org.freedesktop.impl.portal.ScreenCast" = "wlr";
-      "org.freedesktop.impl.portal.Screenshot" = "wlr";
+      "org.freedesktop.impl.portal.ScreenCast" = "hyprland";
+      "org.freedesktop.impl.portal.Screenshot" = "hyprland";
     };
   };
   
@@ -25,15 +27,9 @@
     QT_QPA_PLATFORM = "wayland";
     SDL_VIDEODRIVER = "wayland";
     GDK_BACKEND = "wayland"; 
-    WLR_NO_HARDWARE_CURSORS = "1";
   };
   
-  programs.mango.enable = true;
-  
-  # Noctalia shell
-  environment.systemPackages = [
-    pkgs.polkit_gnome
-  ];
+  programs.hyprland.enable = true;
   
   programs.noctalia-greeter.enable = true;
 }

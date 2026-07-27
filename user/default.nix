@@ -1,6 +1,5 @@
 { inputs, ... }: {
   imports = [
-    inputs.mangowm.hmModules.mango
     inputs.noctalia.homeModules.default
     ./shell.nix
     ./terminal.nix
