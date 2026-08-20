@@ -34,8 +34,8 @@ hl.config({
 
         blur = {
             enabled  = true,
-            size     = 3,
-            passes   = 1,
+            size     = 6,
+            passes   = 2,
             vibrancy = 0.1696,
         },
     },
@@ -83,6 +83,16 @@ hl.config({
     misc = {
         force_default_wallpaper = -1,
         disable_hyprland_logo   = true,
+	disable_splash_rendering = true,
     },
 })
 
+-- Noctalia
+hl.layer_rule({
+    name = "noctalia",
+    match = { namespace = "^noctalia-(bar-.+|notification|dock|panel|attached-panel|osd)$" },
+    no_anim = true,
+    blur = true,
+    blur_popups = true,
+    ignore_alpha = 0.5,
+})

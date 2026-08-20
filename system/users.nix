@@ -5,6 +5,6 @@
     isNormalUser = true;
     home = "/home/berkrz";
     shell = pkgs.zsh;
-    extraGroups = [ "wheel" "networkmanager" "video" "audio" ];
+    extraGroups = [ "wheel" "networkmanager" "video" "audio" "input" ];
   };
 }

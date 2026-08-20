@@ -13,9 +13,13 @@ in {
 
   xdg.configFile."hypr".source = config.lib.file.mkOutOfStoreSymlink "${configDir}/user/hyprland";
 
+  xdg.configFile."noctalia/palettes/My Custom Palette.json".source = config.lib.file.mkOutOfStoreSymlink
+    "${config.home.homeDirectory}/nixos-config/user/noctalia/palette.json";
+
   programs.noctalia = {
     enable = true;
     systemd.enable = true;
+    settings = builtins.fromTOML (builtins.readFile ./noctalia/config.toml);
   };
 
   xdg.configFile."noctalia/settings.toml".source = config.lib.file.mkOutOfStoreSymlink "${configDir}/user/noctalia/config.toml";
@@ -35,4 +39,8 @@ in {
     HYPRCURSOR_SIZE = "20";
   };
 
+  home.packages = with pkgs; [
+    hyprpicker
+    mpvpaper
+  ];
 }

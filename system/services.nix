@@ -17,7 +17,10 @@
   # Power
   services.upower.enable = true;
   
-  environment.systemPackages = [ pkgs.brightnessctl ];
+  environment.systemPackages = with pkgs; [
+    brightnessctl 
+    evtest
+  ];
   
   services.auto-cpufreq = {
     enable = true;
