@@ -19,6 +19,7 @@
   };
 
   home.packages = with pkgs; [
+    ripgrep
     fd
     zip
     unzip

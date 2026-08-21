@@ -10,6 +10,7 @@
     ./gui.nix
     ./tui.nix
     ./gaming.nix
+    ./editor.nix
   ];
   
   home.username = "berkrz";

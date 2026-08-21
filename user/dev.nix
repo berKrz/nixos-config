@@ -1,4 +1,4 @@
-{ ... }: {
+{ pkgs, ... }: {
   programs.git = {
     enable = true;
 
@@ -28,7 +28,6 @@
   
   programs.vim = {
     enable = true;
-    defaultEditor = true;
   
     settings = {
       number = true;
@@ -39,4 +38,8 @@
       set encoding=utf-8
     '';
   };
+
+  home.packages = [
+    pkgs.beekeeper-studio
+  ];
 }
