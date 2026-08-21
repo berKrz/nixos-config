@@ -1,5 +1,10 @@
 { pkgs, ... }: {
-  programs.bat.enable = true;
+  programs.bat = {
+    enable = true;
+    extraPackages = [
+      pkgs.bat-extras.batman
+    ];
+  };
 
   programs.fzf = {
     enable                  = true;
