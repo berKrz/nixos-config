@@ -23,6 +23,8 @@
       gp = "git push";
     
       ll = "ls -la";
+
+      ff = "fastfetch";
     };
   };
 }
