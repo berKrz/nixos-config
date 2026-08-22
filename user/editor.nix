@@ -3,7 +3,7 @@
     enable        = true;
     defaultEditor = true;
 
-    extraLuaConfig = ''
+    initLua = ''
       require("config.lazy")
     '';
 
@@ -18,6 +18,7 @@
       nixfmt
       stylua
 
+      # LazyVim necessary dep
       gcc
       tree-sitter
     ];

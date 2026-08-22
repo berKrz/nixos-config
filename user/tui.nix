@@ -13,10 +13,6 @@
     changeDirWidget.command = "fd --type d";
   };
 
-  programs.btop.enable = true;
-
-  programs.fastfetch.enable = true;
-
   programs.direnv = {
     enable               = true;
     enableZshIntegration = true;
@@ -24,6 +20,7 @@
   };
 
   home.packages = with pkgs; [
+    # Actually useful
     ripgrep
     fd
     zip
@@ -35,5 +32,16 @@
     pandoc
     tree
     curlie
+    btop
+    yazi
+
+    # Eye Candy
+    hollywood
+    fastfetch
+    lavat
+    asciiquarium
+    cmatrix
+    cbonsai
+    pokeget-rs
   ];
 }

@@ -26,5 +26,14 @@
 
       ff = "fastfetch";
     };
+
+    initContent = ''
+      function rice() {
+          kitty --detach lavat -c 0000FF -k FF00FF -G -g
+          kitty --detach cmatrix -C magenta -b
+          kitty --detach cbonsai -l -i -k 165,23,200,30
+          asciiquarium
+        }
+    '';
   };
 }
