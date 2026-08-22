@@ -6,6 +6,7 @@ hl.bind(mod .. " + Return", hl.dsp.exec_cmd(terminal), { description = "Open ter
 hl.bind(mod .. " + E", hl.dsp.exec_cmd(fileManager), { description = "Open file manager" })
 hl.bind(mod .. " + space", hl.dsp.exec_cmd("noctalia msg panel-toggle launcher"), { description = "Open app launcher" })
 hl.bind("CTRL + SHIFT + Escape", hl.dsp.exec_cmd("kitty -e btop"), { description = "Open app launcher" })
+hl.bind(mod .. " + Y", hl.dsp.exec_cmd([[kitty zsh -ic "rice; exec zsh"]]), { description = "Open app launcher" })
 
 -- 2. Windows
 hl.bind(mod .. " + C", hl.dsp.window.close(), { description = "Close window" })
