@@ -34,6 +34,8 @@
           kitty --detach cbonsai -l -i -k 165,23,200,30
           asciiquarium
         }
+
+      pokeget random --hide-name
     '';
-  };
+ };
 }

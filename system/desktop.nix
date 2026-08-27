@@ -6,6 +6,7 @@
   programs.dconf.enable = true;
   
   services.gnome.gnome-keyring.enable = true;
+  services.gvfs.enable = true;
   
   # Two backends are necessary for wlroots compositors
   xdg.portal = {
