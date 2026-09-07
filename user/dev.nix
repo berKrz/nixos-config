@@ -40,6 +40,6 @@
   };
 
   home.packages = [
-    pkgs.beekeeper-studio
+    pkgs.dbgate
   ];
 }
