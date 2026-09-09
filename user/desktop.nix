@@ -8,10 +8,17 @@ in {
     configType = "lua";
     package = null;
     portalPackage = null;
-    systemd.enable = false;
+    systemd.enable = true;
+
+    extraConfig = builtins.readFile ./hyprland/hyprland.lua;
   };
 
-  xdg.configFile."hypr".source = config.lib.file.mkOutOfStoreSymlink "${configDir}/user/hyprland";
+  # individual symlinks
+  xdg.configFile."hypr/binds.lua".source   = config.lib.file.mkOutOfStoreSymlink "${configDir}/user/hyprland/binds.lua";
+  xdg.configFile."hypr/input.lua".source   = config.lib.file.mkOutOfStoreSymlink "${configDir}/user/hyprland/input.lua";
+  xdg.configFile."hypr/rules.lua".source   = config.lib.file.mkOutOfStoreSymlink "${configDir}/user/hyprland/rules.lua";
+  xdg.configFile."hypr/visuals.lua".source = config.lib.file.mkOutOfStoreSymlink "${configDir}/user/hyprland/visuals.lua";
+  xdg.configFile."hypr/noctalia.lua".source = config.lib.file.mkOutOfStoreSymlink "${configDir}/user/hyprland/noctalia.lua";
 
   xdg.configFile."noctalia/palettes/My Custom Palette.json".source = config.lib.file.mkOutOfStoreSymlink
     "${config.home.homeDirectory}/nixos-config/user/noctalia/palette.json";

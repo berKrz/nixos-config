@@ -26,11 +26,6 @@ hl.config({
     }
 })
 
--- Noctalia Start
-hl.on("hyprland.start", function()
-	hl.exec_cmd("noctalia --daemon")
-end)
-
 -- Modules
 require("visuals")
 require("input")
