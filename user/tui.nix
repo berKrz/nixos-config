@@ -34,6 +34,7 @@
     curlie
     btop
     yazi
+    distrobox
 
     # Eye Candy
     hollywood

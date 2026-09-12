@@ -22,4 +22,9 @@
     brightnessctl 
     evtest
   ];
+
+  virtualisation.podman = {
+    enable = true;
+    defaultNetwork.settings.dns_enabled = true; # dnf inside distrobox container
+  };
 }

@@ -35,6 +35,16 @@
           asciiquarium
         }
 
+      function maya() {
+        nohup distrobox enter --name maya -- bash -c '
+          cd /opt/Autodesk/AdskLicensing/13.3.1.9694/AdskLicensingService/
+          sudo ./AdskLicensingService &>/dev/null &
+          sleep 2
+          QT_QPA_PLATFORM=xcb /usr/local/bin/maya
+        ' </dev/null &>/dev/null &
+        disown $!
+      }
+
       pokeget random --hide-name
     '';
  };
