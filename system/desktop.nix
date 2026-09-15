@@ -32,5 +32,5 @@
   
   programs.hyprland.enable = true;
   
-  programs.noctalia-greeter.enable = true;
+  services.displayManager.noctalia-greeter.enable = true;
 }
