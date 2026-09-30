@@ -25,7 +25,7 @@
     fd
     zip
     unzip
-    glow
+    mdr
     jq
     ffmpeg 
     imagemagick
