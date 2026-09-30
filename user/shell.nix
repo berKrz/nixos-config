@@ -15,7 +15,8 @@
     shellAliases = {
       # Rebuild System
       nrs = "sudo nixos-rebuild switch --flake ~/nixos-config#nix-btw";
-      nru = "cd ~/nixos-config && nix flake update && sudo nixos-rebuild switch --flake ~/nixos-config#nix-btw";
+      nfu = "cd ~/nixos-config && nix flake update";
+      nfc = "cd ~/nixos-config && nix flake check";
     	
       # Git
       gs = "git status";
