@@ -7,6 +7,10 @@
   time.timeZone = "America/Sao_Paulo";
   i18n.defaultLocale = "en_US.UTF-8";
 
+  boot.kernelParams = [
+    "nvidia.NVreg_PreserveVideoMemoryAllocations=1" # dGPU power config
+  ];
+
   # Alternative keyboard
   console.keyMap = "us";
 }

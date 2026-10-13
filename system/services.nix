@@ -27,4 +27,14 @@
     enable = true;
     defaultNetwork.settings.dns_enabled = true; # dnf inside distrobox container
   };
+
+  services.earlyoom = {
+    enable = true;
+    freeMemThreshold = 5;   # kill when <5% RAM free
+    freeSwapThreshold = 10; # kill when <10% swap free
+    extraArgs = [
+      "--prefer" "(wine|steam|proton)"
+      "--avoid" "(hyprland|noctalia|pipewire|wireplumber)"
+    ];
+  };
 }
