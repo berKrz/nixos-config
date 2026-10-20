@@ -21,7 +21,10 @@
   environment.systemPackages = with pkgs; [
     brightnessctl 
     evtest
+    docker-compose
   ];
+
+  virtualisation.docker.enable = true;
 
   virtualisation.podman = {
     enable = true;
