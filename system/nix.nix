@@ -1,9 +1,15 @@
 { ... }: {
   nix.settings = {
-    experimental-features = [ "nix-command" "flakes" ];
+    experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
     auto-optimise-store = true;
-    trusted-users = [ "root" "@wheel" ];
-    
+    trusted-users = [
+      "root"
+      "@wheel"
+    ];
+
     # Cache substitutes
     substituters = [
       "https://cache.nixos.org/"
@@ -14,9 +20,9 @@
       "noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4="
     ];
   };
-  
+
   nixpkgs.config.allowUnfree = true;
-  
+
   nix.gc = {
     automatic = true;
     dates = "weekly";

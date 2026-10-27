@@ -4,30 +4,30 @@ fileManager = "nautilus"
 
 -- Monitor
 hl.monitor({
-    output = "eDP-1",
-    mode = "1920x1080",
-    position = "0x0",
-    scale = 1.2,
+	output = "eDP-1",
+	mode = "1920x1080",
+	position = "0x0",
+	scale = 1.2,
 })
 
 -- HDMI
 hl.monitor({
-    output = "HDMI-A-2",
-    mirror = "eDP-1",
-    mode = "1920x1080",
-    position = "0x0",
-    scale = 1.2,
+	output = "HDMI-A-2",
+	mirror = "eDP-1",
+	mode = "1920x1080",
+	position = "0x0",
+	scale = 1.2,
 })
 
 -- Fixing Steam low Resolution
 hl.config({
-    xwayland = {
-    	force_zero_scaling = true,
-    },
+	xwayland = {
+		force_zero_scaling = true,
+	},
 
-    render = {
-      direct_scanout = false,
-    }
+	render = {
+		direct_scanout = false,
+	},
 })
 
 -- Modules

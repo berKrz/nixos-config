@@ -1,6 +1,6 @@
 { pkgs, ... }: {
   programs.neovim = {
-    enable        = true;
+    enable = true;
     defaultEditor = true;
 
     initLua = ''

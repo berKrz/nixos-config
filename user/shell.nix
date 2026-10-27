@@ -1,28 +1,28 @@
 { ... }: {
   programs.zsh = {
     enable = true;
-    
+
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
-    
+
     history = {
       size = 1000;
       save = 1000;
       ignoreDups = true;
       ignoreSpace = true;
     };
-    
+
     shellAliases = {
       # Rebuild System
       nrs = "sudo nixos-rebuild switch --flake ~/nixos-config#nix-btw";
       nfu = "cd ~/nixos-config && nix flake update";
       nfc = "cd ~/nixos-config && nix flake check";
-    	
+
       # Git
       gs = "git status";
       gc = "git commit";
       gp = "git push";
-    
+
       ll = "ls -la";
 
       ff = "fastfetch";
@@ -48,5 +48,5 @@
 
       pokeget random --hide-name
     '';
- };
+  };
 }

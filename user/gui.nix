@@ -10,8 +10,8 @@
 
     plugins = with pkgs.obs-studio-plugins; [
       obs-pipewire-audio-capture # audio per app
-      obs-vaapi                  # amd hw video encoding
-      obs-vkcapture              # vulkan/opengl capture
+      obs-vaapi # amd hw video encoding
+      obs-vkcapture # vulkan/opengl capture
     ];
   };
 }

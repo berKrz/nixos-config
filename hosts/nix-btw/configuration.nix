@@ -1,4 +1,10 @@
-{ config, lib, pkgs, ... }: {
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
+{
   networking.hostName = "nix-btw";
 
   hardware.nvidia.prime = {
@@ -8,4 +14,3 @@
 
   system.stateVersion = "26.05";
 }
-

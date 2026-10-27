@@ -1,7 +1,8 @@
 { pkgs, config, ... }:
 let
   configDir = "${config.home.homeDirectory}/nixos-config";
-in {
+in
+{
 
   wayland.windowManager.hyprland = {
     enable = true;
@@ -14,14 +15,19 @@ in {
   };
 
   # individual symlinks
-  xdg.configFile."hypr/binds.lua".source   = config.lib.file.mkOutOfStoreSymlink "${configDir}/user/hyprland/binds.lua";
-  xdg.configFile."hypr/input.lua".source   = config.lib.file.mkOutOfStoreSymlink "${configDir}/user/hyprland/input.lua";
-  xdg.configFile."hypr/rules.lua".source   = config.lib.file.mkOutOfStoreSymlink "${configDir}/user/hyprland/rules.lua";
-  xdg.configFile."hypr/visuals.lua".source = config.lib.file.mkOutOfStoreSymlink "${configDir}/user/hyprland/visuals.lua";
-  xdg.configFile."hypr/noctalia.lua".source = config.lib.file.mkOutOfStoreSymlink "${configDir}/user/hyprland/noctalia.lua";
+  xdg.configFile."hypr/binds.lua".source =
+    config.lib.file.mkOutOfStoreSymlink "${configDir}/user/hyprland/binds.lua";
+  xdg.configFile."hypr/input.lua".source =
+    config.lib.file.mkOutOfStoreSymlink "${configDir}/user/hyprland/input.lua";
+  xdg.configFile."hypr/rules.lua".source =
+    config.lib.file.mkOutOfStoreSymlink "${configDir}/user/hyprland/rules.lua";
+  xdg.configFile."hypr/visuals.lua".source =
+    config.lib.file.mkOutOfStoreSymlink "${configDir}/user/hyprland/visuals.lua";
+  xdg.configFile."hypr/noctalia.lua".source =
+    config.lib.file.mkOutOfStoreSymlink "${configDir}/user/hyprland/noctalia.lua";
 
-  xdg.configFile."noctalia/palettes/My Custom Palette.json".source = config.lib.file.mkOutOfStoreSymlink
-    "${config.home.homeDirectory}/nixos-config/user/noctalia/palette.json";
+  xdg.configFile."noctalia/palettes/My Custom Palette.json".source =
+    config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-config/user/noctalia/palette.json";
 
   programs.noctalia = {
     enable = true;
@@ -29,7 +35,8 @@ in {
     settings = builtins.fromTOML (builtins.readFile ./noctalia/config.toml);
   };
 
-  xdg.configFile."noctalia/settings.toml".source = config.lib.file.mkOutOfStoreSymlink "${configDir}/user/noctalia/config.toml";
+  xdg.configFile."noctalia/settings.toml".source =
+    config.lib.file.mkOutOfStoreSymlink "${configDir}/user/noctalia/config.toml";
 
   services.hyprpolkitagent.enable = true;
 

@@ -8,16 +8,16 @@
   };
 
   programs.fzf = {
-    enable                  = true;
-    enableZshIntegration    = true;
-    fileWidget.command      = "fd --type f";
+    enable = true;
+    enableZshIntegration = true;
+    fileWidget.command = "fd --type f";
     changeDirWidget.command = "fd --type d";
   };
 
   programs.direnv = {
-    enable               = true;
+    enable = true;
     enableZshIntegration = true;
-    nix-direnv.enable    = true;
+    nix-direnv.enable = true;
   };
 
   home.packages = with pkgs; [
@@ -28,7 +28,7 @@
     unzip
     mdr
     jq
-    ffmpeg 
+    ffmpeg
     imagemagick
     pandoc
     tree

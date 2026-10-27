@@ -4,7 +4,9 @@
   # Noctalia v5 binary cache
   nixConfig = {
     extra-substituters = [ "https://noctalia.cachix.org" ];
-    extra-trusted-public-keys = [ "noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4=" ];
+    extra-trusted-public-keys = [
+      "noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4="
+    ];
   };
 
   inputs = {
@@ -32,7 +34,14 @@
 
   };
 
-  outputs = { self, nixpkgs, home-manager, disko, ... }@inputs:
+  outputs =
+    {
+      self,
+      nixpkgs,
+      home-manager,
+      disko,
+      ...
+    }@inputs:
     let
       system = "x86_64-linux";
       hostname = "nix-btw";
@@ -47,8 +56,8 @@
           disko.nixosModules.disko
           home-manager.nixosModules.home-manager
           inputs.noctalia-greeter.nixosModules.default
-	  ./hosts/${hostname}
-	  ./system
+          ./hosts/${hostname}
+          ./system
           {
             home-manager = {
               useGlobalPkgs = true;
@@ -56,12 +65,13 @@
               # Makes inputs available in every HM module
               extraSpecialArgs = { inherit inputs; };
               backupFileExtension = "backup";
-	      users.${username} = import ./user;
-	    };
-	  }
+              users.${username} = import ./user;
+            };
+          }
         ];
       };
-    in {
+    in
+    {
       nixosConfigurations.${hostname} = nixosSystem;
     };
 }
