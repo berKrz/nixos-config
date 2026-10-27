@@ -13,7 +13,6 @@
     enable = true;
     extraPortals = [
       pkgs.xdg-desktop-portal-gtk # file picker, app chooser etc.
-      pkgs.xdg-desktop-portal-hyprland # screen sharing, screen shots
     ];
     config.common = {
       default = "gtk";
