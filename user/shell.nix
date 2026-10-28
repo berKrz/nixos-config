@@ -37,6 +37,10 @@
         }
 
       function maya() {
+        if [ -f /.distrobox ] || [ -n "$DISTROBOX_ENTER_PATH" ]; then
+          QT_QPA_PLATFORM=xcb /usr/local/bin/maya "$@"
+          return
+        fi
         nohup distrobox enter --name maya -- bash -c '
           cd /opt/Autodesk/AdskLicensing/13.3.1.9694/AdskLicensingService/
           sudo ./AdskLicensingService &>/dev/null &
