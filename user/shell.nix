@@ -20,12 +20,14 @@
 
       # Git
       gs = "git status";
-      gc = "git commit";
+      gc = "git commit -m";
       gp = "git push";
 
-      ll = "ls -la";
+      la = "ls -la";
+      lh = "ls -lh";
 
       ff = "fastfetch";
+      please = "sudo !!";
     };
 
     initContent = ''

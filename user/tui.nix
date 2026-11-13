@@ -36,6 +36,7 @@
     btop
     yazi
     distrobox
+    bc
 
     # Eye Candy
     hollywood
