@@ -20,8 +20,11 @@
 
       # Git
       gs = "git status";
+      ga = "git add"
       gc = "git commit -m";
       gp = "git push";
+      gr = "git restore";
+      grs = "git restore --staged";
 
       la = "ls -la";
       lh = "ls -lh";
