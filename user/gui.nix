@@ -3,6 +3,7 @@
     onlyoffice-desktopeditors
     vlc
     stremio-linux-shell
+    aseprite
   ];
 
   programs.obs-studio = {
