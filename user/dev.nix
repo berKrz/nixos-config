@@ -11,6 +11,14 @@
     ];
   };
 
+  programs.gh = {
+    enable = true;
+
+    settings = {
+      git_protocol = "ssh";
+    };
+  };
+
   programs.ssh = {
     enable = true;
     enableDefaultConfig = false;
