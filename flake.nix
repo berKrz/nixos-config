@@ -36,20 +36,16 @@
 
   outputs =
     {
-      self,
       nixpkgs,
       home-manager,
       disko,
       ...
     }@inputs:
     let
-      system = "x86_64-linux";
       hostname = "nix-btw";
       username = "berkrz";
 
       nixosSystem = nixpkgs.lib.nixosSystem {
-        inherit system;
-
         # Makes inputs available in every module
         specialArgs = { inherit inputs; };
         modules = [
