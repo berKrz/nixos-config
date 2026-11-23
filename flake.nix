@@ -30,7 +30,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    helium.url = "github:schembriaiden/helium-browser-nix-flake";
+    # Prebuilt release binary patched against nixpkgs libs; no cache to break
+    helium = {
+      url = "github:schembriaiden/helium-browser-nix-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
   };
 
