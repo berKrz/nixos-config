@@ -1,4 +1,4 @@
-{ ... }: {
+{ configDir, ... }: {
   programs.zsh = {
     enable = true;
 
@@ -14,9 +14,9 @@
 
     shellAliases = {
       # Rebuild System
-      nrs = "sudo nixos-rebuild switch --flake ~/nixos-config#nix-btw";
-      nfu = "cd ~/nixos-config && nix flake update";
-      nfc = "cd ~/nixos-config && nix flake check";
+      nrs = "sudo nixos-rebuild switch --flake ${configDir}";
+      nfu = "cd ${configDir} && nix flake update";
+      nfc = "cd ${configDir} && nix flake check";
 
       # Git
       gs = "git status";
