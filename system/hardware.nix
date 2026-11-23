@@ -1,7 +1,4 @@
 { ... }: {
-  # AMD CPU
-  hardware.cpu.amd.updateMicrocode = true;
-
   # NVIDIA driver (proprietary)
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware.nvidia = {
