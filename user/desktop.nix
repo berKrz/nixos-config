@@ -1,7 +1,9 @@
-{ pkgs, config, ... }:
-let
-  configDir = "${config.home.homeDirectory}/nixos-config";
-in
+{
+  pkgs,
+  config,
+  configDir,
+  ...
+}:
 {
 
   wayland.windowManager.hyprland = {
@@ -27,7 +29,7 @@ in
     config.lib.file.mkOutOfStoreSymlink "${configDir}/user/hyprland/noctalia.lua";
 
   xdg.configFile."noctalia/palettes/My Custom Palette.json".source =
-    config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-config/user/noctalia/palette.json";
+    config.lib.file.mkOutOfStoreSymlink "${configDir}/user/noctalia/palette.json";
 
   programs.noctalia = {
     enable = true;

@@ -44,10 +44,11 @@
     let
       hostname = "nix-btw";
       username = "berkrz";
+      configDir = "/home/${username}/nixos-config";
 
       nixosSystem = nixpkgs.lib.nixosSystem {
         # Makes inputs available in every module
-        specialArgs = { inherit inputs; };
+        specialArgs = { inherit inputs username configDir; };
         modules = [
           disko.nixosModules.disko
           home-manager.nixosModules.home-manager
@@ -59,7 +60,7 @@
               useGlobalPkgs = true;
               useUserPackages = true;
               # Makes inputs available in every HM module
-              extraSpecialArgs = { inherit inputs; };
+              extraSpecialArgs = { inherit inputs username configDir; };
               backupFileExtension = "backup";
               users.${username} = import ./user;
             };

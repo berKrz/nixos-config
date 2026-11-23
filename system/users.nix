@@ -1,9 +1,8 @@
-{ pkgs, ... }: {
+{ pkgs, username, ... }: {
   programs.zsh.enable = true;
 
-  users.users.berkrz = {
+  users.users.${username} = {
     isNormalUser = true;
-    home = "/home/berkrz";
     shell = pkgs.zsh;
     extraGroups = [
       "wheel"

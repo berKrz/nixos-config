@@ -13,9 +13,5 @@
     ./editor.nix
   ];
 
-  home.username = "berkrz";
-  home.homeDirectory = "/home/berkrz";
   home.stateVersion = "26.05";
-
-  #nixpkgs.config.allowUnfree = true;
 }
