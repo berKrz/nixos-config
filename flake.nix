@@ -74,5 +74,43 @@
     in
     {
       nixosConfigurations.${hostname} = nixosSystem;
+
+      # `nix fmt` formats the whole repo
+      formatter.x86_64-linux =
+        let
+          pkgs = nixpkgs.legacyPackages.x86_64-linux;
+        in
+        pkgs.treefmt.withConfig {
+          runtimeInputs = with pkgs; [
+            nixfmt
+            stylua
+            taplo
+            jsonfmt
+          ];
+          settings = {
+            tree-root-file = "flake.nix";
+            on-unmatched = "info";
+            formatter = {
+              nixfmt = {
+                command = "nixfmt";
+                includes = [ "*.nix" ];
+              };
+              stylua = {
+                command = "stylua";
+                includes = [ "*.lua" ];
+              };
+              taplo = {
+                command = "taplo";
+                options = [ "format" ];
+                includes = [ "*.toml" ];
+              };
+              jsonfmt = {
+                command = "jsonfmt";
+                options = [ "-w" ];
+                includes = [ "*.json" ];
+              };
+            };
+          };
+        };
     };
 }
